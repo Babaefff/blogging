@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog : Editor</title>
+
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/editor.css">
+
+</head>
+
+
+<body>
+    <% if (imagepath) { %>
+        <div class="banner" style="background-image: url(<%= imagepath %>)">
+            <% }else { %>
+                <div class="banner" style="background: #e7e7e7; background-position:center; background-size: cover;">
+                    <% } %>
+                        <form action=" /upload" id="uploadim" method="post" enctype="multipart/form-data">
+                            <input type="file" name="upload" id="banner-upload" accept="image/*"
+                                onchange="this.form.submit()" form="uploadim" hidden>
+
+                            <label for="banner-upload" name="upload" class="banner-upload-btn"><img src="img/upload.png"
+                                    alt="upload banner"></label>
+                        </form>
+                </div>
+
+
+                <div class="blog">
+                    <form action="/editor" id="blogum" method="post" enctype="multipart/form-data">
+                        <textarea type="text" class="title" name="title" id="" placeholder="Blog title.."
+                            form="blogum"></textarea>
+                        <textarea type="text" class="article" name="article" id="" placeholder="Start writing here.."
+                            form="blogum"></textarea>
+                    </form>
+
+                </div>
+
+                <div class="blog-options">
+
+                    <button type="submit" class="btn dark publish-btn" form="blogum">publish</button>
+                    <input type="file" accept="image/*" id="image-upload" form="blogum" hidden>
+                    <label for="image-upload" class="btn grey upload-btn">Upload Image</label>
+
+                </div>
+</body>
+
+</html>

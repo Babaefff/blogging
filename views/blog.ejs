@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog :</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/editor.css">
+    <link rel="stylesheet" href="css/blog.css">
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="img/logo.png" class="logo" alt="">
+        <ul class="links-container">
+            <li class="link-item"><a href="/" class="link">home</a></li>
+            <li class="link-item"><a href="/editor" class="link">editor</a></li>
+        </ul>
+    </nav>
+
+    <div class="banner"
+        style="background:url('data:/<%=nthblog.bannerImage.contentType%>;base64,<%=image%>');background-size: cover; background-position: center;">
+        <%=nthblog.bannerImage.contentType%>
+    </div>
+    <div class="blog">
+        <h1 class="title">
+            <%= nthblog.title %>
+        </h1>
+        <p class="published"><span>published at - <%= nthblog.publishedAt %></span></p>
+        <div class="article">
+            <%= nthblog.article %>
+        </div>
+    </div>
+
+</body>
+
+</html>
